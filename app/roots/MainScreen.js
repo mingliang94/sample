@@ -17,17 +17,19 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 export default class MainScreen extends Component {
   static navigationOptions = {
-      header: null,
+    header: null,
   };
 
-  constructor(props){
+  constructor(props) {
     super(props);
+    this.state = {shine:true}
+    setInterval(()=> {this.setState({shine:!this.state.shine})}, 50);
   }
 
   render() {
     const { navigate } = this.props.navigation;
     return (
-  
+
       <View style={styles.container}>
         <KeyboardAwareScrollView>
           <Text style={styles.welcome}>
@@ -41,7 +43,6 @@ export default class MainScreen extends Component {
             />
           </View>
 
-
           <Text style={styles.instructions}>
             We want to waste your time
         </Text>
@@ -50,17 +51,15 @@ export default class MainScreen extends Component {
             Click on one of the choices
         </Text>
 
-
           <Button1 text1="Open first choice" text2="you are rich!" />
           <Button1 text1="Open second choice" text2="Fuck you!" />
 
-
           <Textbox1 text1='Enter your comments here' />
-
-
+          
           <Button
-            onPress={() => navigate('Donate', { user: 'Lucy' })}
+            onPress={() => navigate('Donate')}
             title="Donate"
+            color={this.state.shine?'pink':'red'}
           />
         </KeyboardAwareScrollView>
       </View>

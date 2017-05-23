@@ -9,7 +9,7 @@ export default class Button1 extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { selected: false, mess: props.text2 };
+        this.state = { text:props.text1, selected: false, mess: props.text2 };
     }
 
     Button1() {
@@ -20,7 +20,7 @@ export default class Button1 extends Component {
         return (
             <Button
                 onPress={this.Button1.bind(this)}
-                title={this.props.text1}
+                title={this.state.text}
                 color="#841584"
                 accessibilityLabel="Learn more about this purple button"
             />

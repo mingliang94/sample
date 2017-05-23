@@ -20,10 +20,16 @@ import {
 
 
 export default class DonateScreen extends Component {
- static navigationOptions = {
-    title: "Please give money"
-    
-  };
+
+    constructor(props) {
+        super(props),
+            this.state = { text: "" }
+    };
+
+    static navigationOptions = {
+        title: "Please give money"
+
+    };
     render() {
         return (
             <View>
@@ -32,7 +38,14 @@ export default class DonateScreen extends Component {
                     Poffer
                 </Text>
 
-                <Textbox1 text1='Enter your comments here' />
+                <TextInput
+                    style={{ height: 40, borderColor: 'green', borderWidth: 1, color: 'black' }}
+                    placeholder="PLEASE DONATE"
+                    placeholderTextColor='grey'
+                    onChangeText={(text) => this.setState({text})}
+                />
+
+
             </View>
         );
     }

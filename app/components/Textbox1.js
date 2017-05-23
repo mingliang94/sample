@@ -10,6 +10,8 @@ import {
 
 export default class Textbox1 extends Component {
 
+
+
   constructor(props) {
     super(props);
     this.state = { text1: "", status: false };
