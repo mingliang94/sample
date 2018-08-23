@@ -4,6 +4,7 @@ import DonateScreen from './app/roots/DonateScreen';
 import MainScreen from './app/roots/MainScreen';
 import {StackNavigator} from 'react-navigation';
 
+const testing_var = 999;
 
 const sample = StackNavigator({
   Home: { screen: MainScreen },
